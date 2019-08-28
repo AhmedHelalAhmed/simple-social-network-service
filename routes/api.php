@@ -24,3 +24,5 @@ Route::delete('/tweets/{tweet}','API\TweetController@destroy')->middleware('can:
 // follow
 Route::post('/users/{user}/follower','API\FollowerController@store')->middleware('auth:api');
 
+// timeline
+Route::get('/home','API\HomeController@index')->middleware('auth:api');
