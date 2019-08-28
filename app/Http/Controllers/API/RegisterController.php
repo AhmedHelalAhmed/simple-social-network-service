@@ -21,7 +21,7 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
             'image' => $StoredImagePath, // we need to change public to storage when get the photo
         ]);
-        $data['message']='User registered successfully';// we need to translate this
+        $data['message']= trans('messages.new_user');// we need to translate this
         return response()->json($data,200);
 
     }

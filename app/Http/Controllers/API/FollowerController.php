@@ -15,11 +15,11 @@ class FollowerController extends Controller
 
        if(auth('api')->user()->users->contains('id',$user->id))
        {
-           $data['message']='You had followed the user before';// we need to translate this
+           $data['message']=trans('messages.user_followed_before');
            return response()->json($data,403);
        }
         $user->followers()->attach(auth('api')->id());
-        $data['message']='You followed a user successfully';// we need to translate this
+        $data['message']=trans('messages.user_followed');
         return response()->json($data,200);
     }
 

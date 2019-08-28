@@ -21,9 +21,8 @@ class TweetController extends Controller
         $inputData=$request->only('text');
         $inputData['user_id']=auth('api')->id();
         Tweet::create($inputData);
-        $data['message']='User create the tweet successfully';
+        $data['message']=trans('messages.new_tweet');
         return response()->json($data,200);
-
     }
 
 
@@ -38,7 +37,7 @@ class TweetController extends Controller
     {
         //TODO we need to handle the user can delete only his tweets
         $tweet->delete();
-        $data['message']='User delete the tweet successfully';
+        $data['message']=trans('messages.delete_tweet');
         return response()->json($data,200);
     }
 }
