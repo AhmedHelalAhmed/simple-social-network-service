@@ -10,6 +10,10 @@ use Storage;
 
 class RegisterController extends Controller
 {
+    /**
+     * @param StoreUserRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function store(StoreUserRequest $request)
     {
 
@@ -19,9 +23,9 @@ class RegisterController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'image' => $StoredImagePath, // we need to change public to storage when get the photo
+            'image' => $StoredImagePath,
         ]);
-        $data['message']= trans('messages.new_user');// we need to translate this
+        $data['message']= trans('messages.new_user');
         return response()->json($data,200);
 
     }

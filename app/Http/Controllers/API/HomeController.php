@@ -8,6 +8,9 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function index()
     {
         $usersIds=auth('api')->user()->users->pluck('id');

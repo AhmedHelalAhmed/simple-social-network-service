@@ -9,7 +9,11 @@ use App\Http\Controllers\Controller;
 
 class FollowerController extends Controller
 {
-
+    /**
+     * @param User $user
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function store(User $user,Request $request)
     {
 
