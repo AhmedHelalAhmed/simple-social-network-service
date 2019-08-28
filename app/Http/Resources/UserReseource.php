@@ -2,10 +2,9 @@
 
 namespace App\Http\Resources;
 
-use App\User;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class TweetResource extends JsonResource
+class UserReseource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,8 +16,8 @@ class TweetResource extends JsonResource
     {
         return [
             'id'=>$this->id,
-            'user'=>new UserReseource($this->user),
-            'text'=>$this->text,
+            'name'=>$this->name,
+            'email'=>$this->email,
             'created_at'=>$this->created_at,
         ];
     }
