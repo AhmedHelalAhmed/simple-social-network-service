@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class localization
+class JsonifyHttpResponse
 {
     /**
      * Handle an incoming request.
@@ -15,10 +15,7 @@ class localization
      */
     public function handle($request, Closure $next)
     {
-        $local = ($request->hasHeader('X-localization')) ? $request->header('X-localization') : 'en';
-
-        app()->setLocale($local);
-
+        $request->headers->set('Accept','application/json');
         return $next($request);
     }
 }

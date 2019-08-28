@@ -51,19 +51,19 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof ModelNotFoundException) {
             return response()->json([
-                'error' => 'Entry for '.str_replace('App\\', '', $exception->getModel()).' not found'], 404);
+                'error' => trans('messages.model_error_1').str_replace('App\\', '', $exception->getModel()).trans('messages.model_error_2')], 404);
         }
 
         if ($exception instanceof AuthorizationException) {
             return response()->json([
-                'error' => 'Unauthorized.'], 401);
+                'error' => trans('messages.error_authorization')], 401);
         }
 
         if ($exception instanceof AccessDeniedHttpException)
         {
             return response()->json([
                 'code' => 403,
-                'message' => 'This action is unauthorized.',
+                'message' => trans('messages.error_authorization_action'),
             ],403);
         }
 
