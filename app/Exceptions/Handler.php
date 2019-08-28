@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Exceptions;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException as AccessDeniedHttpException;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Auth\Access\AuthorizationException;
 class Handler extends ExceptionHandler
 {
     /**
@@ -46,6 +48,25 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+
+        if ($exception instanceof ModelNotFoundException) {
+            return response()->json([
+                'error' => 'Entry for '.str_replace('App\\', '', $exception->getModel()).' not found'], 404);
+        }
+
+        if ($exception instanceof AuthorizationException) {
+            return response()->json([
+                'error' => 'Unauthorized.'], 401);
+        }
+
+        if ($exception instanceof AccessDeniedHttpException)
+        {
+            return response()->json([
+                'code' => 403,
+                'message' => 'This action is unauthorized1.',
+            ],403);
+        }
+
         return parent::render($request, $exception);
     }
 }
