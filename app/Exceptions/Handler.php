@@ -63,7 +63,7 @@ class Handler extends ExceptionHandler
         {
             return response()->json([
                 'code' => 403,
-                'message' => 'This action is unauthorized1.',
+                'message' => 'This action is unauthorized.',
             ],403);
         }
 
