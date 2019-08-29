@@ -24,7 +24,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - User time line => the time line should return all the tweets of the followed users paginated.
 
 ## API Documentations 
- [postman](https://www.getpostman.com/collections/3bafabb9368fa8f905b3) 
+ [postman](https://www.getpostman.com/collections/ddc09f36347ca0196369) 
  
 ## Important commands 
   - ``php artisan storage:link``
