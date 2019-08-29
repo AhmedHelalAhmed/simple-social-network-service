@@ -13,7 +13,7 @@ Laravel is a web application framework with expressive, elegant syntax.
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Service Feature
+## The Service Features
 
 
 - User signup => the following data is required (name, password, email and image).
@@ -23,12 +23,12 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - User follow another user.
 - User time line => the time line should return all the tweets of the followed users paginated.
 
-## documentation 
- [postman](https://www.getpostman.com/collections/3bafabb9368fa8f905b3) 
+## API Documentations 
+ [postman](https://www.getpostman.com/collections/ddc09f36347ca0196369) 
  
 ## Important commands 
   - ``php artisan storage:link``
-  - ``php artisan passport:install`` You need to make a request to /oauth/token to generate a token based on the data which will appear after you run this command as shown in post man in collection folder Auth/Get token for sign up when get the token you can sign up then use the token of the user you registered with.
+  - ``php artisan passport:install`` You need to make a request to /oauth/token to generate a token based on the data which will appear after you run this command as shown in the postman in collection folder Auth/Get token for sign up when get the token you can sign up then use the token of the user you registered with.
   - For Arabic just send header with key X-localization and value ar for Arabic or en for English (default).
   
 
