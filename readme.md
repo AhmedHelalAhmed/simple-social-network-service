@@ -28,7 +28,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
  
 ## Important commands 
   - ``php artisan storage:link``
-  - ``php artisan passport:install`` You need to make a request to /oauth/token to generate a token based on the data which will appear after you run this command as shown in post man in collection folder Auth/Get token for sign up when get the token you can sign up then use the token of the user you registered with.
+  - ``php artisan passport:install`` You need to make a request to /oauth/token to generate a token based on the data which will appear after you run this command as shown in the postman in collection folder Auth/Get token for sign up when get the token you can sign up then use the token of the user you registered with.
   - For Arabic just send header with key X-localization and value ar for Arabic or en for English (default).
   
 
