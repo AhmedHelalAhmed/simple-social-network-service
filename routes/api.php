@@ -25,7 +25,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::delete('/tweets/{tweet}', 'API\TweetController@destroy')->middleware('can:update,tweet');
 
     // follow
-    Route::post('/users/{user}/follower', 'API\FollowerController@store');
+    Route::post('/users/{user}/followers', 'API\FollowerController@store');
 
     // timeline
     Route::get('/home', 'API\HomeController@index');

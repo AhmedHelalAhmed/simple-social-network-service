@@ -7,6 +7,8 @@ use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Auth\Access\AuthorizationException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 class Handler extends ExceptionHandler
 {
     /**
@@ -67,6 +69,13 @@ class Handler extends ExceptionHandler
             ],403);
         }
 
+        if ($exception instanceof NotFoundHttpException)
+        {
+            return response()->json([
+                'code' => 403,
+                'message' => trans('messages.error_authorization_action'),
+            ],403);
+        }
         return parent::render($request, $exception);
     }
 }
