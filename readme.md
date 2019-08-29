@@ -13,7 +13,7 @@ Laravel is a web application framework with expressive, elegant syntax.
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Service Feature
+## The Service Features
 
 
 - User signup => the following data is required (name, password, email and image).
@@ -23,7 +23,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - User follow another user.
 - User time line => the time line should return all the tweets of the followed users paginated.
 
-## documentation 
+## API Documentations 
  [postman](https://www.getpostman.com/collections/3bafabb9368fa8f905b3) 
  
 ## Important commands 
